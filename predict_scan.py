@@ -5,7 +5,8 @@ import os
 import sys, argparse
 from rtlsdr import RtlSdr
 import scipy.signal as signal
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 def read_samples(sdr, freq):
     f_offset = 250000  # shifted tune to avoid DC
